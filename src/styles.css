@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1. Reset básico para evitar el "aire" arriba */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f7f8;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden; /* Evita scroll lateral molesto */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Ajuste para que el Header no tape el contenido al navegar */
+section, [id] {
+  scroll-margin-top: 90px;
+}
+
+/* 3. El toque final para el sticky */
+header {
+  top: 0;
+  position: sticky;
+  z-index: 50;
+}

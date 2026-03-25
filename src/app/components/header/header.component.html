@@ -1,0 +1,81 @@
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    
+    <!-- <div class="flex items-center gap-3">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+        </svg>
+      </div>
+      <span class="text-xl font-bold tracking-tight">Diego Javier Soto</span>
+    </div> -->
+
+  <!--   <div class="flex items-center gap-2 cursor-pointer" (click)="scrollToTop()">
+  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/20">
+    <span class="text-xl font-bold">&lt;/&gt;</span>
+  </div>
+  
+  <span class="text-xl font-black uppercase tracking-tighter">
+    Diego Javier <span class="text-primary">Soto</span>
+  </span>
+</div> -->
+
+<div class="flex items-center gap-3 cursor-pointer" (click)="scrollToTop()">
+  
+  <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+    </svg>
+  </div>
+
+  <span class="text-xl font-bold tracking-tight">Diego Javier Soto</span>
+
+</div>
+
+
+
+
+
+
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#about">About</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projects</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#experience">Experience</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+      <a href="cv-diego-soto.pdf" target="_blank" class="rounded-lg bg-primary px-5 py-2 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-md">
+        Resume
+      </a>
+    </nav>
+
+    <button (click)="toggleMenu()" class="md:hidden text-slate-900 dark:text-white p-2 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div> @if (isMenuOpen) {
+    <div class="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-6 py-8 space-y-6 shadow-2xl animate-in slide-in-from-top duration-300">
+      <!-- <nav class="flex flex-col items-center gap-6">
+        <a (click)="isMenuOpen = false" href="#about" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">About</a>
+        <a (click)="isMenuOpen = false" href="#projects" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">Projects</a>
+        <a (click)="isMenuOpen = false" href="#skills" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">Skills</a>
+        <a (click)="isMenuOpen = false" href="#experience" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">Experience</a>
+        <a (click)="isMenuOpen = false" href="#contact" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">Contact</a>
+      </nav> -->
+
+      <nav class="flex flex-col items-center gap-6">
+  <button (click)="navigateTo('about')" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary">About</button>
+  <button (click)="navigateTo('projects')" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary">Projects</button>
+  <button (click)="navigateTo('skills')" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary">Skills</button>
+  <button (click)="navigateTo('experience')" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary">Experience</button>
+  <button (click)="navigateTo('contact')" class="text-xl font-semibold text-slate-700 dark:text-slate-200 hover:text-primary">Contact</button>
+</nav>
+      
+      <div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+        <a href="cv-diego-soto.pdf" target="_blank" class="block w-full text-center rounded-xl bg-primary py-4 text-lg font-bold text-white shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+          Resume
+        </a>
+      </div>
+    </div>
+  }
+</header>
