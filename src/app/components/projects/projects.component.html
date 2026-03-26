@@ -26,9 +26,10 @@
             </div>
 
             <div class="mt-6">
-              <button (click)="abrirModal(p)" class="flex items-center gap-2 font-bold text-primary hover:underline">
-  {{ p.linkText }} <span class="material-symbols-outlined">arrow_forward</span>
-</button>
+              <a [routerLink]="['/proyecto', p.id]" 
+     class="inline-flex items-center gap-2 font-bold text-primary hover:underline cursor-pointer">
+    {{ p.linkText }}
+  </a>
             </div>
           </div>
         </div>

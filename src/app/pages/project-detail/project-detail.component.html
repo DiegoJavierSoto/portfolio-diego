@@ -1,0 +1,40 @@
+<main class="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-950" *ngIf="proyecto">
+  <div class="mx-auto max-w-4xl px-6">
+    
+    <a routerLink="/" class="mb-8 inline-flex items-center text-sm font-medium text-slate-500 hover:text-primary transition-colors">
+      <span class="material-symbols-outlined mr-1">arrow_back</span> Back to Portfolio
+    </a>
+
+    <header class="mb-12">
+      <h1 class="text-4xl font-black md:text-5xl dark:text-white mb-6">{{ proyecto.titulo }}</h1>
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span *ngFor="let tag of proyecto.tags" class="rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+          {{ tag }}
+        </span>
+      </div>
+    </header>
+
+    <div class="relative mb-12 overflow-hidden rounded-2xl shadow-2xl">
+      <img [src]="proyecto.imagen" [alt]="proyecto.titulo" class="w-full object-cover">
+    </div>
+
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+        {{ proyecto.detalle }}
+      </p>
+
+      <div class="mt-12 p-8 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-xl font-bold mb-1">Documentation</h3>
+          <p class="text-slate-500">View the full process and technical details.</p>
+        </div>
+        <a *ngIf="proyecto.pdf" [href]="proyecto.pdf" target="_blank" 
+           class="inline-flex h-12 items-center rounded-xl bg-primary px-8 font-bold text-white shadow-lg hover:scale-105 transition-all">
+          Download PDF Case Study
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
