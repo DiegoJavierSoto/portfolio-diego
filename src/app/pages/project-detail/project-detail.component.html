@@ -1,37 +1,68 @@
-<main class="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-950" *ngIf="proyecto">
-  <div class="mx-auto max-w-4xl px-6">
-    
-    <a routerLink="/" class="mb-8 inline-flex items-center text-sm font-medium text-slate-500 hover:text-primary transition-colors">
-      <span class="material-symbols-outlined mr-1">arrow_back</span> Back to Portfolio
+<main class="min-h-screen pt-32 pb-16 bg-white dark:bg-slate-950" *ngIf="proyecto">
+  <div class="mx-auto max-w-6xl px-6"> <a routerLink="/" class="mb-10 inline-flex items-center text-sm font-medium text-slate-500 hover:text-primary transition-colors cursor-pointer">
+      <span class="material-symbols-outlined mr-1.5 text-base">arrow_back</span> Back to Portfolio
     </a>
 
     <header class="mb-12">
-      <h1 class="text-4xl font-black md:text-5xl dark:text-white mb-6">{{ proyecto.titulo }}</h1>
-      <div class="flex flex-wrap gap-2 mb-8">
-        <span *ngFor="let tag of proyecto.tags" class="rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+      <h1 class="text-4xl font-black md:text-5xl dark:text-white mb-5">{{ proyecto.titulo }}</h1>
+      <div class="flex flex-wrap gap-2.5">
+        <span *ngFor="let tag of proyecto.tags" class="rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary uppercase tracking-wider">
           {{ tag }}
         </span>
       </div>
     </header>
 
-    <div class="relative mb-12 overflow-hidden rounded-2xl shadow-2xl">
-      <img [src]="proyecto.imagen" [alt]="proyecto.titulo" class="w-full object-cover">
-    </div>
+   <!--  <div class="grid gap-6 md:grid-cols-2 mb-16">
+      <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video">
+        <img [src]="proyecto.imagen" class="w-full h-full object-cover" alt="Tesis Interface - Desktop">
+      </div>
+      <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
+         <span class="text-slate-400 text-sm italic">User Profile & Bookings View</span>
+      </div>
+    </div> -->
 
-    <div class="prose prose-slate dark:prose-invert max-w-none">
-      <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
-      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-        {{ proyecto.detalle }}
-      </p>
+    <div class="grid gap-6 md:grid-cols-2 mb-16">
+  
+  <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video">
+    <img [src]="proyecto.imagen" class="w-full h-full object-cover" alt="Tesis Interface - Desktop View">
+  </div>
 
-      <div class="mt-12 p-8 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <h3 class="text-xl font-bold mb-1">Documentation</h3>
-          <p class="text-slate-500">View the full process and technical details.</p>
+  <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video">
+    <img [src]="proyecto.imagenDetalle" class="w-full h-full object-cover" alt="Tesis Interface - Booking Process View">
+  </div>
+
+</div>
+
+    <div class="grid gap-12 lg:grid-cols-3">
+      
+      <div class="lg:col-span-2 space-y-6">
+        <h2 class="text-2xl font-bold dark:text-white flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">description</span> Project Overview & Methodology
+        </h2>
+        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+          <p>
+            {{ proyecto.detalle }}
+          </p>
+          <p>
+            This platform was developed following the **IEEE 830 standard for Software Requirements Specifications (SRS)**, ensuring clarity and completeness in system requirements.
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5 marker:text-primary">
+            <li>Integrated external APIs for real-time data (Google Maps & OpenWeather).</li>
+            <li>Implemented under the **Scrum agile methodology**, prioritizing value delivery.</li>
+            <li>Focus on responsive UI/UX for a seamless booking experience across devices.</li>
+          </ul>
         </div>
+      </div>
+
+      <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 h-fit lg:sticky lg:top-28">
+        <h3 class="text-lg font-bold mb-3 dark:text-white flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">picture_as_pdf</span> Tech Stack & Docs
+        </h3>
+        <p class="text-sm text-slate-500 mb-8">View the complete technical details and SRS documentation.</p>
+        
         <a *ngIf="proyecto.pdf" [href]="proyecto.pdf" target="_blank" 
-           class="inline-flex h-12 items-center rounded-xl bg-primary px-8 font-bold text-white shadow-lg hover:scale-105 transition-all">
-          Download PDF Case Study
+           class="w-full inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-md shadow-primary/20">
+          Open Case Study (PDF)
         </a>
       </div>
     </div>

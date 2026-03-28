@@ -13,13 +13,16 @@ export class ProjectDetailComponent implements OnInit {
 
   // Lista temporal (Igual a la de ProjectsComponent)
   misProyectos = [
-    {
-      id: 'tesis',
-      titulo: 'Agencia de Viajes (Tesis UTN)',
-      detalle: 'Desarrollo integral siguiendo el estándar IEEE 830...',
-      imagen: 'projects/web_agencia.jpg',
-      pdf: 'projects/tesis-utn.pdf',
-      tags: ['Angular', 'TypeScript', 'Tailwind']
+    {// En el array misProyectos del project-detail.component.ts:
+
+  id: 'tesis',
+  titulo: 'University Travel Agency Platform', // Título más descriptivo
+  detalle: 'Final thesis project for University Technician in Programming at UTN. A full-stack solution designed for tourism management, featuring real-time API integrations and a responsive UI/UX. The development process followed Scrum agile methodologies, focusing on requirements gathering under the IEEE 830 standard for Software Requirements Specifications (SRS).',
+  imagen: 'web_agencia.jpg', 
+  imagenDetalle: 'utn-viajes-hero.jpg',// Tu captura principal
+  pdf: 'tesis-utn.pdf',
+  tags: ['Angular', 'TypeScript', 'Tailwind']
+
     },
     {
       id: 'cafeteria',
