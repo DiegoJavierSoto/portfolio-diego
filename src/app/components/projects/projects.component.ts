@@ -10,6 +10,16 @@ import { RouterModule } from '@angular/router';
 })
 export class ProjectsComponent {
     misProyectos = [
+      {
+    id: 'bienestar-inteligente',
+    titulo: 'Bienestar Inteligente',
+    desc: 'Professional Coaching platform for Silvina Calosso. Built with Angular and deployed on Netlify.',
+    detalle: 'Landing page enfocada en marca personal y conversión.',
+    tags: ['Angular', 'Tailwind', 'UX/UI'],
+    imagen: 'bienestar_1.jpg', // Asegúrate de que esta imagen esté en /public
+    linkText: 'View Project Details',
+    pdf: null 
+  },
     {
       id: 'tesis', // ID único
       titulo: 'Agencia de Viajes (Tesis UTN)',

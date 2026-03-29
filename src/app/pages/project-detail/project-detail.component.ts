@@ -13,25 +13,33 @@ export class ProjectDetailComponent implements OnInit {
 
   // Lista temporal (Igual a la de ProjectsComponent)
   misProyectos = [
-    {// En el array misProyectos del project-detail.component.ts:
-
-  id: 'tesis',
-  titulo: 'University Travel Agency Platform', // Título más descriptivo
-  detalle: 'Final thesis project for University Technician in Programming at UTN. A full-stack solution designed for tourism management, featuring real-time API integrations and a responsive UI/UX. The development process followed Scrum agile methodologies, focusing on requirements gathering under the IEEE 830 standard for Software Requirements Specifications (SRS).',
-  imagen: 'web_agencia.jpg', 
-  imagenDetalle: 'utn-viajes-hero.jpg',// Tu captura principal
-  pdf: 'tesis-utn.pdf',
-  tags: ['Angular', 'TypeScript', 'Tailwind']
-
-    },
-    {
-      id: 'cafeteria',
-      titulo: 'Guía de Cafeterías (UX/UI)',
-      detalle: 'Investigación de usuarios y wireframes...',
-      imagen: 'projects/cafeterias_web.jpg',
-      tags: ['Figma', 'UX Research']
-    }
-  ];
+  {
+    id: 'bienestar-inteligente',
+    titulo: 'Bienestar Inteligente',
+    detalle: 'Desarrollo de una Landing Page profesional para la  Health Coach Silvina Calosso. El sitio incluye secciones de biografía, servicios de coaching, testimonios y una integración estratégica para la conversión de clientes. Se priorizó una estética limpia y una navegación intuitiva que refleje los valores de marca personal.',
+    imagen: 'bienestar_1.jpg', 
+    imagenDetalle: 'bienestar_2.jpg',
+    urlViva: 'https://bienestar-inteligente.netlify.app/#',
+    tags: ['Angular', 'Tailwind', 'Netlify', 'UX/UI']
+  },
+  {
+    id: 'cafeteria',
+    titulo: 'Guía de Cafeterías (UX/UI)',
+    detalle: 'Investigación profunda de usuarios, creación de wireframes de alta fidelidad y pruebas de usabilidad. Este proyecto se centra en resolver la necesidad de los entusiastas del café de especialidad para encontrar lugares únicos mediante una interfaz intuitiva y minimalista.',
+    imagen: 'cafeporahi.jpg',
+    imagenDetalle: 'cafeporahi_2.jpg', // Asegúrate de que este archivo exista en /public
+    tags: ['Figma', 'UX Research', 'Prototyping']
+  },
+  {
+    id: 'tesis',
+    titulo: 'University Travel Agency Platform',
+    detalle: 'Final thesis project for University Technician in Programming at UTN. A full-stack solution designed for tourism management, featuring real-time API integrations and a responsive UI/UX. The development process followed Scrum agile methodologies, focusing on requirements gathering under the IEEE 830 standard for Software Requirements Specifications (SRS).',
+    imagen: 'viajes_1.jpg', 
+    imagenDetalle: 'viajes_2.jpg',
+    pdf: 'tesis-utn.pdf',
+    tags: ['Angular', 'TypeScript', 'Tailwind']
+  }
+];
 
   constructor(private route: ActivatedRoute) {}
 
