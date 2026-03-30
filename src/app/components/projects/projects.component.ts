@@ -18,7 +18,7 @@ export class ProjectsComponent {
     tags: ['Angular', 'Tailwind', 'UX/UI'],
     imagen: 'bienestar_1.jpg', // Asegúrate de que esta imagen esté en /public
     linkText: 'View Project Details',
-    pdf: null 
+    pdf: 'projects/bienestar_int.pdf'
   },
     {
       id: 'tesis', // ID único
@@ -39,7 +39,8 @@ export class ProjectsComponent {
       tags: ['Figma', 'UX Research', 'Prototyping'],
       imagen: 'cafeporahi.jpg',
       linkText: 'View Figma Prototype',
-      pdf: null // Este no tiene PDF, quizás un link a Figma después
+      pdf: null // Ruta al PDF
+     // Este no tiene PDF, quizás un link a Figma después
     }
     // ¡Acá podés agregar todos los que quieras en el futuro!
   ];

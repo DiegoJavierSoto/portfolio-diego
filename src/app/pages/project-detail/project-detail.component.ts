@@ -20,6 +20,7 @@ export class ProjectDetailComponent implements OnInit {
     imagen: 'bienestar_1.jpg', 
     imagenDetalle: 'bienestar_2.jpg',
     urlViva: 'https://bienestar-inteligente.netlify.app/#',
+    pdf: 'bienestar_int.pdf',
     tags: ['Angular', 'Tailwind', 'Netlify', 'UX/UI']
   },
   {
