@@ -37,32 +37,32 @@
       
       <div class="lg:col-span-2 space-y-6">
         <h2 class="text-2xl font-bold dark:text-white flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary">description</span> Project Overview & Methodology
+          <span class="material-symbols-outlined text-primary">description</span> Descripción general y metodología del proyecto
         </h2>
         <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
           <p>
             {{ proyecto.detalle }}
           </p>
           <p>
-            This platform was developed following the **IEEE 830 standard for Software Requirements Specifications (SRS)**, ensuring clarity and completeness in system requirements.
-          </p>
+A diferencia de sitios convencionales, se aplicó una filosofía de <strong>diseño editorial de alta gama</strong>, buscando ofrecer un "respiro digital" mediante el uso de aire visual y asimetrías orgánicas.          </p>
           <ul class="list-disc pl-5 space-y-1.5 marker:text-primary">
-            <li>Integrated external APIs for real-time data (Google Maps & OpenWeather).</li>
-            <li>Implemented under the **Scrum agile methodology**, prioritizing value delivery.</li>
-            <li>Focus on responsive UI/UX for a seamless booking experience across devices.</li>
-          </ul>
+    <li><strong>Psicología del Color:</strong> Paleta basada en la naturaleza (verde bosque y tierra) para transmitir vitalidad y serenidad.</li>
+    <li><strong>Glassmorphism:</strong> Navegación translúcida con desenfoque de fondo para una sensación de ligereza.</li>
+    <li><strong>Core Web Vitals:</strong> Optimización de carga instantánea mediante el uso de JavaScript Vanilla y HTML5 semántico.</li>
+    <li><strong>Micro-Conversiones:</strong> Integración estratégica de CTAs con mensajes pre-configurados para WhatsApp.</li>
+  </ul>
         </div>
       </div>
 
       <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 h-fit lg:sticky lg:top-28">
         <h3 class="text-lg font-bold mb-3 dark:text-white flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary">picture_as_pdf</span> Tech Stack & Docs
+          <span class="material-symbols-outlined text-primary">picture_as_pdf</span> Tecnologías utilizadas y documentación
         </h3>
-        <p class="text-sm text-slate-500 mb-8">View the complete technical details and SRS documentation.</p>
+        <p class="text-sm text-slate-500 mb-8">Consulte los detalles técnicos completos y la documentación SRS.</p>
         
         <a *ngIf="proyecto.pdf" [href]="proyecto.pdf" target="_blank" 
            class="w-full inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-md shadow-primary/20">
-          Open Case Study (PDF)
+          Abrir Caso de Estudio (PDF)
         </a>
       </div>
     </div>
