@@ -34,7 +34,7 @@ export class ProjectsComponent {
     {
       id: 'cafeteria', // ID único
       titulo: 'Guía de Cafeterías (UX/UI)',
-      desc: 'Investigación exhaustiva de UX y diseño de UI para una guía móvil que ayuda a los entusiastas a encontrar café de especialidad..',
+      desc: 'Investigación exhaustiva de UX y diseño de UI para una guía móvil que ayuda a los entusiastas a encontrar café de especialidad.',
       detalle: 'Investigación de usuarios, creación de wireframes de alta fidelidad y pruebas de usabilidad para mejorar la experiencia de búsqueda de café de especialidad.',
       tags: ['Figma', 'UX Research', 'Prototyping'],
       imagen: 'cafeporahi.jpg',
