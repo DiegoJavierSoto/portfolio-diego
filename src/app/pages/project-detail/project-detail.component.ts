@@ -33,8 +33,8 @@ export class ProjectDetailComponent implements OnInit {
   },
   {
     id: 'tesis',
-    titulo: 'University Travel Agency Platform',
-    detalle: 'Final thesis project for University Technician in Programming at UTN. A full-stack solution designed for tourism management, featuring real-time API integrations and a responsive UI/UX. The development process followed Scrum agile methodologies, focusing on requirements gathering under the IEEE 830 standard for Software Requirements Specifications (SRS).',
+    titulo: 'Plataforma de Agencia de Viajes',
+    detalle: 'Proyecto de tesis final para el título de Técnico Universitario en Programación en la UTN. Se trata de una solución integral diseñada para la gestión turística, con integraciones de API en tiempo real y una interfaz de usuario (UI/UX) adaptable. El proceso de desarrollo siguió la metodología ágil Scrum, centrándose en la recopilación de requisitos según el estándar IEEE 830 para las Especificaciones de Requisitos de Software (SRS).',
     imagen: 'viajes_1.jpg', 
     imagenDetalle: 'viajes_2.jpg',
     pdf: 'tesis-utn.pdf',

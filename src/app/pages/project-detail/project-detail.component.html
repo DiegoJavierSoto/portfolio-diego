@@ -3,14 +3,33 @@
       <span class="material-symbols-outlined mr-1.5 text-base">arrow_back</span> Back to Portfolio
     </a>
 
-    <header class="mb-12">
+   <header class="mb-12">
       <h1 class="text-4xl font-black md:text-5xl dark:text-white mb-5">{{ proyecto.titulo }}</h1>
       <div class="flex flex-wrap gap-2.5">
-        <span *ngFor="let tag of proyecto.tags" class="rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary uppercase tracking-wider">
+      <!--   <span *ngFor="let tag of proyecto.tags"
+          class="rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary uppercase tracking-wider">
           {{ tag }}
-        </span>
+        </span> -->
       </div>
     </header>
+
+
+<!--  <header class="mb-12">
+  <h1 class="text-4xl md:text-5xl font-black mb-6 dark:text-white leading-tight">
+    {{ proyecto.titulo }}
+  </h1>
+
+  <div class="flex flex-wrap gap-2">
+    <span *ngFor="let tag of proyecto.tags" 
+      class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold border border-primary/20">
+      {{ tag }}
+    </span>
+  </div>
+</header>
+ -->
+
+
+
 
    <!--  <div class="grid gap-6 md:grid-cols-2 mb-16">
       <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video">
@@ -39,6 +58,18 @@
         <h2 class="text-2xl font-bold dark:text-white flex items-center gap-2">
           <span class="material-symbols-outlined text-primary">description</span> Descripción general y metodología del proyecto
         </h2>
+
+
+       <div class="flex flex-wrap gap-2 mb-8">
+    <span *ngFor="let tag of proyecto.tags" 
+          class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold border border-slate-200 dark:border-slate-700">
+      {{ tag }}
+    </span>
+  </div>
+
+
+
+
         <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
           <p>
             {{ proyecto.detalle }}
@@ -68,4 +99,8 @@ A diferencia de sitios convencionales, se aplicó una filosofía de <strong>dise
     </div>
 
   </div>
+
+ 
+
+
 </main>
