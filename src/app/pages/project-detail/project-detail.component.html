@@ -74,14 +74,14 @@
           <p>
             {{ proyecto.detalle }}
           </p>
-          <p>
-A diferencia de sitios convencionales, se aplicó una filosofía de <strong>diseño editorial de alta gama</strong>, buscando ofrecer un "respiro digital" mediante el uso de aire visual y asimetrías orgánicas.          </p>
-          <ul class="list-disc pl-5 space-y-1.5 marker:text-primary">
-    <li><strong>Psicología del Color:</strong> Paleta basada en la naturaleza (verde bosque y tierra) para transmitir vitalidad y serenidad.</li>
-    <li><strong>Glassmorphism:</strong> Navegación translúcida con desenfoque de fondo para una sensación de ligereza.</li>
-    <li><strong>Core Web Vitals:</strong> Optimización de carga instantánea mediante el uso de JavaScript Vanilla y HTML5 semántico.</li>
-    <li><strong>Micro-Conversiones:</strong> Integración estratégica de CTAs con mensajes pre-configurados para WhatsApp.</li>
-  </ul>
+          <p *ngIf="proyecto.parrafoDestacado">
+            {{ proyecto.parrafoDestacado }}
+          </p>
+          <ul *ngIf="proyecto.features?.length" class="list-disc pl-5 space-y-1.5 marker:text-primary">
+            <li *ngFor="let feature of proyecto.features">
+              <strong>{{ feature.titulo }}:</strong> {{ feature.descripcion }}
+            </li>
+          </ul>
         </div>
       </div>
 
