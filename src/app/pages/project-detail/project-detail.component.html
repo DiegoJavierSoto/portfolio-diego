@@ -1,84 +1,45 @@
-<main class="min-h-screen pt-32 pb-16 bg-white dark:bg-slate-950" *ngIf="proyecto">
-  <div class="mx-auto max-w-6xl px-6"> <a routerLink="/" class="mb-10 inline-flex items-center text-sm font-medium text-slate-500 hover:text-primary transition-colors cursor-pointer">
-      <span class="material-symbols-outlined mr-1.5 text-base">arrow_back</span> Back to Portfolio
+<main class="min-h-screen pt-32 pb-16 bg-white dark:bg-slate-950" *ngIf="proyecto()">
+  <div class="mx-auto max-w-6xl px-6" *ngIf="proyecto() as p"> 
+    <a routerLink="/" class="mb-10 inline-flex items-center text-sm font-medium text-slate-500 hover:text-primary transition-colors cursor-pointer">
+      <span class="material-symbols-outlined mr-1.5 text-base">arrow_back</span> {{ langService.t().detailBack }}
     </a>
 
-   <header class="mb-12">
-      <h1 class="text-4xl font-black md:text-5xl dark:text-white mb-5">{{ proyecto.titulo }}</h1>
-      <div class="flex flex-wrap gap-2.5">
-      <!--   <span *ngFor="let tag of proyecto.tags"
-          class="rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary uppercase tracking-wider">
-          {{ tag }}
-        </span> -->
-      </div>
+    <header class="mb-12">
+      <h1 class="text-4xl font-black md:text-5xl dark:text-white mb-5">{{ p.titulo }}</h1>
     </header>
 
-
-<!--  <header class="mb-12">
-  <h1 class="text-4xl md:text-5xl font-black mb-6 dark:text-white leading-tight">
-    {{ proyecto.titulo }}
-  </h1>
-
-  <div class="flex flex-wrap gap-2">
-    <span *ngFor="let tag of proyecto.tags" 
-      class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold border border-primary/20">
-      {{ tag }}
-    </span>
-  </div>
-</header>
- -->
-
-
-
-
-   <!--  <div class="grid gap-6 md:grid-cols-2 mb-16">
-      <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video">
-        <img [src]="proyecto.imagen" class="w-full h-full object-cover" alt="Tesis Interface - Desktop">
-      </div>
-      <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
-         <span class="text-slate-400 text-sm italic">User Profile & Bookings View</span>
-      </div>
-    </div> -->
-
     <div class="grid gap-6 md:grid-cols-2 mb-16">
-  
-  <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video">
-    <img [src]="proyecto.imagen" class="w-full h-full object-cover" alt="Tesis Interface - Desktop View">
-  </div>
+      <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video">
+        <img [src]="p.imagen" class="w-full h-full object-cover" [alt]="p.titulo + ' - Vista principal'">
+      </div>
 
-  <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video">
-    <img [src]="proyecto.imagenDetalle" class="w-full h-full object-cover" alt="Tesis Interface - Booking Process View">
-  </div>
-
-</div>
+      <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg aspect-video" *ngIf="p.imagenDetalle">
+        <img [src]="p.imagenDetalle" class="w-full h-full object-cover" [alt]="p.titulo + ' - Vista de detalle'">
+      </div>
+    </div>
 
     <div class="grid gap-12 lg:grid-cols-3">
-      
       <div class="lg:col-span-2 space-y-6">
         <h2 class="text-2xl font-bold dark:text-white flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary">description</span> Descripción general y metodología del proyecto
+          <span class="material-symbols-outlined text-primary">description</span> {{ langService.t().detailOverview }}
         </h2>
 
-
-       <div class="flex flex-wrap gap-2 mb-8">
-    <span *ngFor="let tag of proyecto.tags" 
-          class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold border border-slate-200 dark:border-slate-700">
-      {{ tag }}
-    </span>
-  </div>
-
-
-
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span *ngFor="let tag of p.tags" 
+                class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold border border-slate-200 dark:border-slate-700">
+            {{ tag }}
+          </span>
+        </div>
 
         <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
           <p>
-            {{ proyecto.detalle }}
+            {{ p.detalle }}
           </p>
-          <p *ngIf="proyecto.parrafoDestacado">
-            {{ proyecto.parrafoDestacado }}
+          <p *ngIf="p.parrafoDestacado">
+            {{ p.parrafoDestacado }}
           </p>
-          <ul *ngIf="proyecto.features?.length" class="list-disc pl-5 space-y-1.5 marker:text-primary">
-            <li *ngFor="let feature of proyecto.features">
+          <ul *ngIf="p.features?.length" class="list-disc pl-5 space-y-1.5 marker:text-primary">
+            <li *ngFor="let feature of p.features">
               <strong>{{ feature.titulo }}:</strong> {{ feature.descripcion }}
             </li>
           </ul>
@@ -87,20 +48,15 @@
 
       <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 h-fit lg:sticky lg:top-28">
         <h3 class="text-lg font-bold mb-3 dark:text-white flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary">picture_as_pdf</span> Tecnologías utilizadas y documentación
+          <span class="material-symbols-outlined text-primary">picture_as_pdf</span> {{ langService.t().detailTechDoc }}
         </h3>
-        <p class="text-sm text-slate-500 mb-8">Consulte los detalles técnicos completos y la documentación SRS.</p>
+        <p class="text-sm text-slate-500 mb-8">{{ langService.t().detailTechSub }}</p>
         
-        <a *ngIf="proyecto.pdf" [href]="proyecto.pdf" target="_blank" 
+        <a *ngIf="p.pdf" [href]="p.pdf" target="_blank" 
            class="w-full inline-flex h-12 items-center justify-center rounded-xl bg-primary px-6 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-md shadow-primary/20">
-          Abrir Caso de Estudio (PDF)
+          {{ langService.t().detailPdfBtn }}
         </a>
       </div>
     </div>
-
   </div>
-
- 
-
-
 </main>

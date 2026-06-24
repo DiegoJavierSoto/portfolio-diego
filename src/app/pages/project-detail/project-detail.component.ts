@@ -1,8 +1,9 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, Signal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
-import { Project } from '../../models/project.model';
+import { LanguageService } from '../../services/language.service';
+import { ResolvedProject } from '../../models/project.model';
 
 @Component({
   selector: 'app-project-detail',
@@ -12,15 +13,15 @@ import { Project } from '../../models/project.model';
 })
 export class ProjectDetailComponent implements OnInit {
   projectService = inject(ProjectService);
-  proyecto: Project | undefined;
+  langService = inject(LanguageService);
+  
+  proyecto: Signal<ResolvedProject | undefined> = signal(undefined);
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Capturamos el ID de la URL (ej: 'tesis')
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      // Buscamos el proyecto que coincida a través del servicio
       this.proyecto = this.projectService.getProjectById(id);
     }
   }

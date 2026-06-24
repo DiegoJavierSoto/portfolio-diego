@@ -1,8 +1,8 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
-import { Project } from '../../models/project.model';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-projects',
@@ -10,15 +10,13 @@ import { Project } from '../../models/project.model';
   imports: [CommonModule, RouterModule],
   templateUrl: './projects.component.html'
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
   projectService = inject(ProjectService);
-  misProyectos: Project[] = [];
+  langService = inject(LanguageService);
 
-  ngOnInit() {
-    this.misProyectos = this.projectService.getProjects();
-  }
+  // Expose the signal containing localized projects
+  misProyectos = this.projectService.getProjects();
 
-  // Propiedad para el proyecto seleccionado
   proyectoSeleccionado: any = null;
 
   abrirModal(proyecto: any) {
@@ -29,4 +27,3 @@ export class ProjectsComponent implements OnInit {
     this.proyectoSeleccionado = null;
   }
 }
-
